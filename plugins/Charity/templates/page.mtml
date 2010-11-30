@@ -1,0 +1,86 @@
+<mt:PageBasename setvar="basename"><mt:If name="basename" eq="index">
+    <mt:Ignore>
+        The "index" Page is the site home page. We need to save this as
+        a variable to use elsewhere as an easy way to know that this page
+        is the home page.
+    </mt:Ignore>
+    <mt:SetVar name="home_page" value="1">
+</mt:If><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <mt:Include module="<__trans phrase="HTML Head">">
+    <title><mt:Unless name="home_page"><mt:PageTitle encode_html="1"> - </mt:Unless><mt:BlogName encode_html="1"></title>
+</head>
+<body id="<mt:BlogTemplateSetID>" class="mt-page-archive <mt:PageLayout> <mt:PageBasename>">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <mt:Include module="<__trans phrase="Banner Header">">
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="page-<mt:PageID>" class="page-asset asset">
+                            <mt:Ignore>
+                                A Page is used for the home page, so gets some special handling.
+                            </mt:Ignore>
+                            <mt:Unless name="home_page">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name"><mt:PageTitle></h1>
+                                </div>
+                            </mt:Unless>
+                                <div class="asset-content">
+                                <mt:If tag="PageBody">
+                                    <div class="asset-body">
+                                        <mt:PageBody>
+                                    </div>
+                                </mt:If>
+                                <mt:If tag="PageMore">
+                                    <div id="more" class="asset-more">
+                                        <mt:PageMore>
+                                    </div>
+                                </mt:If>
+                                </div>
+                            <mt:if tag="PageImageGalleryAssetCount" gt="0">
+                                <div id="slideshow" class="entry-content more">
+                                    <mt:include module="Image Gallery (Page)">
+                                </div>
+                            </mt:if>
+                                <div class="asset-footer"></div>
+                            </div>
+
+                <mt:If name="home_page">
+                    <mt:If tag="HomeListRecentEntries">
+                        <mt:Include widget="Recent Entries">
+                    </mt:if>
+                <mt:Else>
+                    <mt:Include module="<__trans phrase="Trackbacks">">
+                    <mt:Include module="<__trans phrase="Comments">">
+                </mt:If>
+
+                        </div>
+                    </div>
+
+
+                    <mt:Include module="<__trans phrase="Sidebar">">
+
+
+                </div>
+            </div>
+
+
+            <mt:Include module="<__trans phrase="Banner Footer">">
+
+
+        </div>
+    </div>
+</body>
+</html>

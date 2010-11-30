@@ -1,0 +1,19 @@
+<mt:Ignore>
+    The height is pretty straight-forward: the specified height correlates 
+    to the height of the Like button layout style.
+</mt:Ignore>
+<mt:SetVarBlock name="fb_like_height"><mt:If tag="FacebookLikeLayoutStyle" eq="standard">80<mt:Else tag="FacebookLikeLayoutStyle" eq="button_count">20<mt:Else tag="FacebookLikeLayoutStyle" eq="box_count">65</mt:If></mt:SetVarBlock>
+
+<mt:Ignore>
+    The Like button area should be wide enough to fill the sidebar area. The 
+    sidebar is either 190 or 330 pixels wide, minus 30 pixels of padding.
+</mt:Ignore>
+<mt:SetVarBlock name="fb_like_width"><mt:If tag="PageLayout" like="(layout-wtt|layout-twt|layout-wt|layout-tw)">160<mt:Else tag="PageLayout" like="(layout-wm|layout-mw)">300</mt:If></mt:SetVarBlock>
+
+<div class="widget-facebook-like widget">
+    <div class="widget-content">
+
+        <iframe src="http://www.facebook.com/plugins/like.php?href=<mt:BlogURL encode_url="1">&amp;layout=<mt:FacebookLikeLayoutStyle><mt:If tag="FacebookLikeLayoutStyle" eq="standard">&amp;show_faces=true</mt:If>&amp;width=<mt:Var name="fb_like_width">&amp;action=<mt:FacebookLikeAction>&amp;colorscheme=<mt:FacebookLikeColorScheme>&amp;height=<mt:Var name="fb_like_height">" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:<mt:Var name="fb_like_width">px; height:<mt:Var name="fb_like_height">px;" allowTransparency="true"></iframe>
+
+    </div>
+</div>

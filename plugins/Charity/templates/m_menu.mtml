@@ -1,0 +1,68 @@
+<mt:If tag="MenuEnable">
+<div id="menu">
+    <div id="menu-inner">
+        <ul>
+    <mt:If tag="MenuHomeLink">
+            <li>
+                <a href="<mt:BlogURL>">Home</a>
+            </li>
+    </mt:If>
+    <mt:If tag="MenuBlogLink">
+            <li>
+                <a href="<mt:Link template="blog_index">">Blog</a>
+            </li>
+    </mt:If>
+    <mt:If tag="MenuItem1Page">
+        <mt:MenuItem1Page setvar="id">
+        <mt:Pages id="$id">
+            <li>
+                <a href="<mt:PagePermalink>">
+                    <mt:If tag="MenuItem1Label"><mt:MenuItem1Label><mt:Else><mt:PageTitle></mt:If>
+                </a>
+            </li>
+        </mt:Pages>
+    </mt:If>
+    <mt:If tag="MenuItem2Page">
+        <mt:MenuItem2Page setvar="id">
+        <mt:Pages id="$id">
+            <li>
+                <a href="<mt:PagePermalink>">
+                    <mt:If tag="MenuItem2Label"><mt:MenuItem2Label><mt:Else><mt:PageTitle></mt:If>
+                </a>
+            </li>
+        </mt:Pages>
+    </mt:If>
+    <mt:If tag="MenuItem3Page">
+        <mt:MenuItem3Page setvar="id">
+        <mt:Pages id="$id">
+            <li>
+                <a href="<mt:PagePermalink>">
+                    <mt:If tag="MenuItem3Label"><mt:MenuItem3Label><mt:Else><mt:PageTitle></mt:If>
+                </a>
+            </li>
+        </mt:Pages>
+    </mt:If>
+    <mt:If tag="MenuItem4Page">
+        <mt:MenuItem4Page setvar="id">
+        <mt:Pages id="$id">
+            <li>
+                <a href="<mt:PagePermalink>">
+                    <mt:If tag="MenuItem4Label"><mt:MenuItem4Label><mt:Else><mt:PageTitle></mt:If>
+                </a>
+            </li>
+        </mt:Pages>
+    </mt:If>
+    <mt:If tag="MenuItem5Page">
+        <mt:MenuItem5Page setvar="id">
+        <mt:Pages id="$id">
+            <li>
+                <a href="<mt:PagePermalink>">
+                    <mt:If tag="MenuItem5Label"><mt:MenuItem5Label><mt:Else><mt:PageTitle></mt:If>
+                </a>
+            </li>
+        </mt:Pages>
+    </mt:If>
+        </ul>
+    </div>
+</div>
+</mt:If>

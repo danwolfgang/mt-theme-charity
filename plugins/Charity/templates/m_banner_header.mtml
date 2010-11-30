@@ -1,0 +1,17 @@
+<div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+        <mt:If tag="HeaderImage">
+            <mt:HeaderImageAsset>
+            <div id="header-image" style="<mt:If tag="HeaderImagePosition" eq="Left">float: left; margin-right: 20px;<mt:Else>float: right;</mt:If>">
+                <img src="<mt:AssetURL height="100">" height="100" />
+            </div>
+            </mt:HeaderImageAsset>
+        </mt:If>
+            <div id="header-name"><a href="<mt:BlogURL>" accesskey="1"><mt:BlogName encode_html="1"></a></div>
+            <div id="header-description"><mt:BlogDescription></div>
+        </div>
+    </div>
+</div>
+
+<mt:Include module="Menu">

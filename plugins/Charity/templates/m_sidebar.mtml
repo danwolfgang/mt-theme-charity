@@ -1,0 +1,41 @@
+<mt:Ignore><!-- 
+#
+#  The sidebar is made up of one or two columns.
+#  For 2-column designs, just beta.
+#  For 3-column designs, beta and gamma.
+#
+--></mt:Ignore>
+
+
+<div id="beta">
+    <div id="beta-inner">
+
+<mt:If tag="PageLayout" like="^layout-(wt|tw|wm|mw)$">
+    <mt:If name="home_page">
+        <mt:WidgetSet name="<__trans phrase="2-column layout - Sidebar (Home)">">
+    <mt:Else>
+        <mt:WidgetSet name="<__trans phrase="2-column layout - Sidebar">">
+    </mt:If>
+<mt:Else>
+    <mt:If name="home_page">
+        <mt:WidgetSet name="<__trans phrase="3-column layout - Primary Sidebar (Home)">">
+    <mt:Else>
+        <mt:WidgetSet name="<__trans phrase="3-column layout - Primary Sidebar">">
+    </mt:If>
+</mt:If>
+
+    </div>
+</div>
+
+
+<mt:If tag="PageLayout" like="^layout-(wtt|twt)$">
+<div id="gamma">
+    <div id="gamma-inner">
+    <mt:If name="home_page">
+        <mt:WidgetSet name="<__trans phrase="3-column layout - Secondary Sidebar (Home)">">
+    <mt:Else>
+        <mt:WidgetSet name="<__trans phrase="3-column layout - Secondary Sidebar">">
+    </mt:If>
+    </div>
+</div>
+</mt:If>

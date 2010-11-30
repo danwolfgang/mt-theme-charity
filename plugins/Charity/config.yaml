@@ -1,0 +1,639 @@
+name: 'Charity'
+key: Charity
+id: Charity
+description: 'The Charity theme allows for rapid deployment of a charity-focused site, with some of the common features found on such a site. This theme is based on Classic Blog, Minimalist.'
+author_name: 'Dan Wolfgang, uiNNOVATIONS'
+author_link: 'http://uinnovations.com'
+version: 1.0
+static_version: 1
+l10n_class: Charity::L10N
+
+template_sets:
+    charity:
+        base_path: templates
+        label: 'Charity'
+        documentation: docs.html
+        blog_preferences: charity_preferences
+        preview: 'charity/preview.jpg'
+        thumbnail: 'charity/thumbnail.jpg'
+        options:
+            fieldsets:
+                global:
+                    label: 'Global Options'
+                    order: 1
+                header:
+                    label: 'Header'
+                    order: 2
+                menu:
+                    label: 'Navigation Menu'
+                    order: 3
+                facebook:
+                    label: 'Facebook Like Button'
+                    hint: 'Configure how this site&rsquo;s Facebook Like button functions with the following configuration options. The Like button will allow users to like this blog. The Like button is built based on the iframe code from <a href="http://developers.facebook.com/docs/reference/plugins/like">Facebook Developers</a>.'
+                    order: 4
+                paypal:
+                    label: 'PayPal Donations'
+                    hint: 'PayPal donation buttons can be added to any Page or Entry by simply pasting the code from PayPal in place. To use the PayPal sidebar widget, paste the PayPal code here and add the widget to the widget set.'
+                    order: 5
+                home:
+                    label: 'Home Page'
+                    hint: 'In addition to the options here, the home page content is managed by the Page &ldquo;Home.&rdquo; The Home page can also be customized through the use of the &ldquo;(Home)&rdquo; Widget Sets, allowing for a unique home page sidebar.'
+                    order: 6
+            # Global Options
+            page_layout:
+                label: 'Page Layout'
+                hint: 'Select the page layout style.'
+                tag: PageLayout
+                type: select
+                values: 'layout-wtt,layout-twt,layout-wt,layout-tw,layout-mw,layout-wm'
+                default: 'layout-wm'
+                order: 1
+                fieldset: global
+            theme_feature:
+                label: 'Theme Color'
+                hint: 'Select a color to be used with this theme.'
+                tag: ThemeFeature
+                type: select
+                values: 'Blue,Brown,Green,Grey,Light Blue,Light Green,Pink,Purple,Red,White'
+                default: 'Blue'
+                republish: styles
+                order: 2
+                fieldset: global
+            footer_notice:
+                label: 'Footer Notice'
+                hint: 'Enter HTML to craft footer content.'
+                tag: FooterNotice
+                type: textarea
+                order: 10
+                fieldset: global
+            footer_copyright:
+                label: 'Footer Copyright'
+                hint: 'Display a copyright notice in the footer.'
+                type: checkbox
+                tag: FooterCopyright
+                default: 1
+                order: 11
+                fieldset: global
+            primary_author:
+                label: 'Primary Author'
+                hint: "Enter the username of the primary author to display <em>only</em> this users Action Stream profiles in the Other Profiles widget. (By default all author's profiles are displayed. Be sure to install the Action Streams plugin to use this feature.)"
+                tag: PrimaryAuthor
+                type: text
+                order: 20
+                fieldset: global
+            # Header
+            header_image:
+                label: 'Header Image'
+                hint: 'Display an image in the header of the site. The image will be proportionally resized to 100 pixels tall.'
+                type: file
+                tag: HeaderImage
+                order: 1
+                fieldset: header
+            header_image_position:
+                label: 'Header Image Position'
+                hint: 'Select where the header image should be placed.'
+                type: radio
+                values: 'Left,Right'
+                default: 'Right'
+                tag: HeaderImagePosition
+                order: 2
+                fieldset: header
+            # Menu
+            menu_enable:
+                label: 'Use Navigation Menu'
+                hint: 'Show or hide the navigation menu.'
+                type: checkbox
+                default: 1
+                tag: MenuEnable
+                order: 1
+                fieldset: menu
+            menu_items_separator:
+                type: separator
+                order: 2
+                fieldset: menu
+            menu_home_link:
+                label: 'Home Link'
+                hint: 'Display a link to the site home page in the menu. Note that the header is always clickable to return home, so this link is a little redundant but offers some clarity.'
+                type: checkbox
+                default: 0
+                tag: MenuHomeLink
+                order: 5
+                fieldset: menu
+            menu_blog_link:
+                label: 'Blog Link'
+                hint: 'Display a link to the blog home page in the menu.'
+                type: checkbox
+                default: 1
+                tag: MenuBlogLink
+                order: 6
+                fieldset: menu
+            menu_item_1:
+                label: 'Menu Item Position 1'
+                type: separator
+                order: 10
+                fieldset: menu
+            menu_item_1_page:
+                label: 'Page'
+                hint: 'Select a Page to appear in the menu.'
+                type: page
+                tag: MenuItem1Page
+                order: 11
+                fieldset: menu
+            menu_item_1_label:
+                label: 'Label'
+                hint: 'Enter a text label to appear on the menu. This is helpful if the Page Title is long but short menu text is preferred.'
+                type: text
+                tag: MenuItem1Label
+                order: 12
+                fieldset: menu
+            menu_item_2:
+                label: 'Menu Item Position 2'
+                type: separator
+                order: 20
+                fieldset: menu
+            menu_item_2_page:
+                label: 'Page'
+                hint: 'Select a Page to appear in the menu.'
+                type: page
+                tag: MenuItem2Page
+                order: 21
+                fieldset: menu
+            menu_item_2_label:
+                label: 'Label'
+                hint: 'Enter a text label to appear on the menu. This is helpful if the Page Title is long but short menu text is preferred.'
+                type: text
+                tag: MenuItem2Label
+                order: 22
+                fieldset: menu
+            menu_item_3:
+                label: 'Menu Item Position 3'
+                type: separator
+                order: 30
+                fieldset: menu
+            menu_item_3_page:
+                label: 'Page'
+                hint: 'Select a Page to appear in the menu.'
+                type: page
+                tag: MenuItem3Page
+                order: 31
+                fieldset: menu
+            menu_item_3_label:
+                label: 'Label'
+                hint: 'Enter a text label to appear on the menu. This is helpful if the Page Title is long but short menu text is preferred.'
+                type: text
+                tag: MenuItem3Label
+                order: 32
+                fieldset: menu
+            menu_item_4:
+                label: 'Menu Item Position 4'
+                type: separator
+                order: 40
+                fieldset: menu
+            menu_item_4_page:
+                label: 'Page'
+                hint: 'Select a Page to appear in the menu.'
+                type: page
+                tag: MenuItem4Page
+                order: 41
+                fieldset: menu
+            menu_item_4_label:
+                label: 'Label'
+                hint: 'Enter a text label to appear on the menu. This is helpful if the Page Title is long but short menu text is preferred.'
+                type: text
+                tag: MenuItem4Label
+                order: 42
+                fieldset: menu
+            menu_item_5:
+                label: 'Menu Item Position 5'
+                type: separator
+                order: 50
+                fieldset: menu
+            menu_item_5_page:
+                label: 'Page'
+                hint: 'Select a Page to appear in the menu.'
+                type: page
+                tag: MenuItem5Page
+                order: 51
+                fieldset: menu
+            menu_item_5_label:
+                label: 'Label'
+                hint: 'Enter a text label to appear on the menu. This is helpful if the Page Title is long but short menu text is preferred.'
+                type: text
+                tag: MenuItem5Label
+                order: 52
+                fieldset: menu
+            # Facebook Like Button
+            facebook_like_layout_style:
+                label: 'Layout Style'
+                hint: "<strong>standard</strong>: displays social text to the right of the button and friends' profile photos below; requires <code>layout-wm</code> or <code>layout-mw</code> Layout option. <br /><strong>button_count</strong>: displays the total number of likes to the right of the button. <br /><strong>box_count</strong>: displays the total number of likes above the button."
+                type: select
+                values: 'standard,button_count,box_count'
+                default: 'button_count'
+                tag: FacebookLikeLayoutStyle
+                order: 2
+                fieldset: facebook
+            facebook_like_show_faces:
+                label: 'Show Faces'
+                hint: 'If using the &ldquo;standard&rdquo; Layout Style, user profile pics can be shown below the Like button. This options is ignored for other Layout Styles.'
+                type: checkbox
+                tag: FacebookLikeShowFaces
+                order: 3
+                fieldset: facebook
+            facebook_like_action:
+                label: 'Action Verb'
+                hint: 'The verb to display on the button'
+                type: select
+                values: 'like,recommended'
+                default: 'like'
+                tag: FacebookLikeAction
+                order: 4
+                fieldset: facebook
+            facebook_like_colorscheme:
+                label: 'Color Scheme'
+                hint: 'The &ldquo;light&rdquo; option is the default and likely the preferred choice; &ldquo;dark&rdquo; may show up better against some background colors.'
+                type: select
+                values: 'light,dark'
+                default: 'light'
+                tag: FacebookLikeColorScheme
+                order: 5
+                fieldset: facebook
+            facebook_like_width:
+                label: 'Width'
+                hint: 'Advanced feature: Enter a width for the Like button.<br />Note: if you are using one of the standard blog layout options and <em>have not</em> overrided the column widths with custom CSS, the Facebook Like button width will be automatically calculated. In other words, leave this field blank unless you specifically need to override it.'
+                type: text
+                tag: FacebookLikeWidth
+                order: 6
+                fieldset: facebook
+            # Home
+            home_list_recent_entries:
+                label: 'List Recent Entries'
+                hint: 'Display links to the most recent entries on the home page, beneath any page text.'
+                type: checkbox
+                default: 1
+                tag: HomeListRecentEntries
+                order: 1
+                fieldset: home
+            # PayPal Donations
+            paypal_widget:
+                label: 'PayPal Sidebar Widget'
+                hint: ''
+                type: textarea
+                tag: PayPalWidget
+                order: 1
+                fieldset: paypal
+        fields:
+            page_image_gallery:
+                label: 'Image Gallery'
+                description: 'Select images to include as a gallery on this page.'
+                options: 'gallery/%y/%m/'
+                type: asset_gallery
+                obj_type: page
+                tag: PageImageGallery
+            entry_image_gallery:
+                label: 'Image Gallery'
+                description: 'Select images to include as a gallery on this entry.'
+                options: 'gallery/%y/%m/'
+                type: asset_gallery
+                obj_type: entry
+                tag: EntryImageGallery
+        templates:
+            archive:
+                entry_listing:
+                    label: 'Entry Listing'
+                    mappings:
+                        yearly:
+                            archive_type: Yearly
+                            preferred: 1
+                            build_type: 4
+                        monthly:
+                            archive_type: Monthly
+                            preferred: 1
+                            build_type: 4
+                        category:
+                            archive_type: Category
+                            preferred: 1
+                            build_type: 4
+            index:
+                archive_index:
+                    label: 'Archive Index'
+                    outfile: archives.html
+                    rebuild_me: 1
+                    build_type: 4
+                blog_index:
+                    label: 'Blog Index'
+                    outfile: blog.html
+                    rebuild_me: 1
+                    build_type: 1
+                feed_recent:
+                    label: 'Feed - Recent Entries'
+                    outfile: atom.xml
+                    rebuild_me: 1
+                    build_type: 4
+                javascript:
+                    label: JavaScript
+                    outfile: mt.js
+                    rebuild_me: 1
+                    build_type: 4
+                rsd:
+                    label: RSD
+                    outfile: rsd.xml
+                    rebuild_me: 1
+                    build_type: 4
+                styles:
+                    label: Stylesheet
+                    outfile: styles.css
+                    rebuild_me: 1
+                    build_type: 4
+                    custom_css: 1
+            individual:
+                entry:
+                    label: Entry
+                    mappings:
+                        individual:
+                            archive_type: Individual
+                            preferred: 1
+                            build_type: 1
+            module:
+                m_banner_footer:
+                    label: 'Banner Footer'
+                    cache:
+                        expire_type: 1
+                        expire_interval: 5
+                m_banner_header:
+                    label: 'Banner Header'
+                    cache:
+                        expire_type: 1
+                        expire_interval: 5
+                m_comments:
+                    label: 'Comments'
+                m_comment_detail:
+                    label: 'Comment Detail'
+                m_entry_summary:
+                    label: 'Entry Summary'
+                m_gallery_css:
+                    label: 'Gallery CSS'
+                m_html_head:
+                    label: 'HTML Head'
+                    cache:
+                        expire_type: 1
+                        expire_interval: 5
+                m_image_gallery_page:
+                    label: 'Image Gallery (Page)'
+                m_menu:
+                    label: 'Menu'
+                m_sidebar:
+                    label: 'Sidebar'
+                m_trackbacks:
+                    label: 'Trackbacks'
+            page:
+                page:
+                    label: Page
+                    mappings:
+                        page:
+                            archive_type: Page
+                            preferred: 1
+                            build_type: 1
+            system:
+                comment_preview:
+                    label: 'Comment Preview'
+                comment_response:
+                    label: 'Comment Response'
+                dynamic_error:
+                    label: 'Dynamic Error'
+                popup_image:
+                    label: 'Popup Image'
+                search_results:
+                    label: 'Search Results'
+            widget:
+                w_about_this_page:
+                    label: 'About This Page'
+                w_action_streams:
+                    label: 'Action Streams'
+                    cache:
+                        expire_type: 1
+                        expire_interval: 30
+                        include_with_ssi: 1
+                w_archive_widgets_group:
+                    label: 'Archive Widgets Group'
+                    cache:
+                        expire_type: 1
+                        expire_interval: 30
+                        include_with_ssi: 1
+                w_author_archive_list:
+                    label: 'Author Archives'
+                    cache:
+                        expire_type: 2
+                        expire_event: author
+                        include_with_ssi: 1
+                w_calendar:
+                    label: Calendar
+                    cache:
+                        expire_type: 1
+                        expire_interval: 360
+                        include_with_ssi: 1
+                w_category_archive_list:
+                    label: 'Category Archives'
+                    cache:
+                        expire_type: 2
+                        expire_event: category
+                        include_with_ssi: 1
+                w_current_category_monthly_archive_list:
+                    label: 'Current Category Monthly Archives'
+                w_date_based_author_archives:
+                    label: 'Date-Based Author Archives'
+                    cache:
+                        expire_type: 2
+                        expire_event: author
+                        include_with_ssi: 1
+                w_date_based_category_archives:
+                    label: 'Date-Based Category Archives'
+                    cache:
+                        expire_type: 2
+                        expire_event: category
+                        include_with_ssi: 1
+                w_facebook_like:
+                    label: 'Facebook Like Button'
+                    expire_type: 1
+                    expire_interval: 360
+                    include_with_ssi: 1
+                w_monthly_archive_dropdown:
+                    label: 'Monthly Archives Dropdown'
+                    cache:
+                        expire_type: 1
+                        expire_interval: 360
+                        include_with_ssi: 1
+                w_monthly_archive_list:
+                    label: 'Monthly Archives'
+                    cache:
+                        expire_type: 1
+                        expire_interval: 360
+                        include_with_ssi: 1
+                w_other_profiles:
+                    label: 'Action Streams Profiles'
+                    cache:
+                        expire_type: 1
+                        expire_interval: 5
+                        include_with_ssi: 1
+                w_pages_list:
+                    label: 'Page Listing'
+                    cache:
+                        expire_type: 1
+                        expire_interval: 5
+                        include_with_ssi: 1
+                w_powered_by:
+                    label: 'Powered By'
+                    cache:
+                        expire_type: 1
+                        expire_interval: 360
+                        include_with_ssi: 1
+                w_recent_assets:
+                    label: 'Recent Assets'
+                    cache:
+                        expire_type: 2
+                        expire_event: asset
+                        include_with_ssi: 1
+                w_recent_comments:
+                    label: 'Recent Comments'
+                    cache:
+                        expire_type: 2
+                        expire_event: comment
+                        include_with_ssi: 1
+                w_recent_entries:
+                    label: 'Recent Entries'
+                    cache:
+                        expire_type: 2
+                        expire_event: entry
+                        include_with_ssi: 1
+                w_search:
+                    label: Search
+                    cache:
+                        expire_type: 1
+                        expire_interval: 360
+                        include_with_ssi: 1
+                w_syndication:
+                    label: Syndication
+                    cache:
+                        expire_type: 1
+                        expire_interval: 360
+                        include_with_ssi: 1
+                w_tag_cloud:
+                    label: 'Tag Cloud'
+                    cache:
+                        expire_type: 1
+                        expire_interval: 60
+                        include_with_ssi: 1
+            widgetset:
+                2_column_layout_sidebar:
+                    label: '2-column layout - Sidebar'
+                    widgets:
+                        - 'Facebook Like Button'
+                        - 'Search'
+                        - 'About This Page'
+                        - 'Recent Comments'
+                        - 'Recent Entries'
+                        - 'Archive Widgets Group'
+                        - 'Syndication'
+                        - 'Powered By'
+                2_column_layout_sidebar_home:
+                    label: '2-column layout - Sidebar (Home)'
+                    widgets:
+                        - 'Facebook Like Button'
+                        - 'Search'
+                        - 'Recent Comments'
+                        - 'Recent Entries'
+                        - 'Syndication'
+                        - 'Powered By'
+                3_column_layout_primary_sidebar:
+                    label: '3-column layout - Primary Sidebar'
+                    widgets:
+                        - 'Facebook Like Button'
+                        - 'Archive Widgets Group'
+                        - 'Recent Comments'
+                        - 'Recent Entries'
+                3_column_layout_primary_sidebar_home:
+                    label: '3-column layout - Primary Sidebar (Home)'
+                    widgets:
+                        - 'Facebook Like Button'
+                        - 'Recent Comments'
+                        - 'Recent Entries'
+                3_column_layout_secondary_sidebar:
+                    label: '3-column layout - Secondary Sidebar'
+                    widgets:
+                        - 'Search'
+                        - 'About This Page'
+                        - 'Syndication'
+                        - 'Powered By'
+                3_column_layout_secondary_sidebar_home:
+                    label: '3-column layout - Secondary Sidebar (Home)'
+                    widgets:
+                        - 'Search'
+                        - 'Syndication'
+                        - 'Powered By'
+        content:
+            pages:
+                index:
+                    label: 'Home'
+                    body: 'This is the home page.'
+                contact:
+                    label: 'Contact Us'
+                about:
+                    label: 'About Our Charity'
+                support:
+                    label: 'Support Our Charity'
+                    body: 'Make a donation.'
+
+blog_preferences:
+    charity_preferences:
+        label: 'Charity theme preferences'
+        description: 'Preferred preferences for the Charity theme'
+        plugin_data:
+            ActionStreams:
+                rebuild_for_action_stream_events: 1
+        preferences:
+            allow_anon_comments: 1
+            allow_comment_html: 1
+            allow_commenter_regist: 1
+            allow_comments_default: 1
+            allow_pings: 1
+            allow_pings_default: 1
+            allow_reg_comments: 1
+            allow_unreg_comments: 1
+            archive_type_preferred: entry
+            autodiscover_links: 0
+            autolink_urls: 1
+            basename_limit: 100
+            captcha_provider: 
+            cc_license: 
+            commenter_authenticators: MovableType
+            convert_paras: 'markdown_with_smartypants'
+            convert_paras_comments: 1
+            custom_dynamic_templates: none
+            days_on_index: 0
+            email_new_comments: 1
+            email_new_pings: 1
+            entries_on_index: 10
+            file_extension: html
+            follow_auth_links: 1
+            image_default_align: right
+            image_default_constrain: 1
+            image_default_thumb: 1
+            image_default_width: 150
+            include_cache: 1
+            include_system: php
+            internal_autodiscovery: 0
+            is_dynamic: 0
+            junk_folder_expiry: 7
+            junk_score_threshold: 0
+            manual_approve_commenters: 0
+            moderate_pings: 1
+            moderate_unreg_comments: 0
+            nofollow_urls: 0
+            ping_others: http://rpc.pingomatic.com
+            require_comment_emails: 1
+            require_typekey_emails: 0
+            sort_order_comments: ascend
+            sort_order_posts: descend
+            status_default: 2
+            use_comment_confirmation: 1
+            words_in_excerpt: 40
+
