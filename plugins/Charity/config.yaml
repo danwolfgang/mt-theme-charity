@@ -5,7 +5,7 @@ description: 'The Charity theme allows for rapid deployment of a charity-focused
 author_name: 'Dan Wolfgang, uiNNOVATIONS'
 author_link: 'http://uinnovations.com'
 version: 1.0
-static_version: 1
+static_version: 2
 l10n_class: Charity::L10N
 
 template_sets:
@@ -377,6 +377,8 @@ template_sets:
                     cache:
                         expire_type: 1
                         expire_interval: 5
+                m_image_gallery_entry:
+                    label: 'Image Gallery (Entry)'
                 m_image_gallery_page:
                     label: 'Image Gallery (Page)'
                 m_menu:
