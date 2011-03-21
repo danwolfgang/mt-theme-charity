@@ -19,10 +19,10 @@ See the Charity theme in action at [dwcomedy.com](http://dwcomedy.com/), the web
 # Prerequisites
 
 * Movable Type Pro 4.1 or higher
-* Config Assistant 2.0 or higher (included with Melody)
-* Theme Manager 0.9.4 or higher (included with Melody)
-* Custom CSS 0.96 or higher
-* Asset Gallery 1.2.3 or higher
+* [Config Assistant](https://github.com/openmelody/mt-plugin-configassistant/downloads) 2.0 or higher (included with Melody)
+* [Theme Manager](https://github.com/openmelody/mt-plugin-theme-manager/downloads) 0.9.4 or higher (included with Melody)
+* [Custom CSS](https://github.com/endevver/mt-plugin-customcss/downloads) 0.96 or higher
+* [Asset Gallery](https://github.com/endevver/mt-plugin-assetgallery/downloads) 1.2.3 or higher
 
 
 # Installation
