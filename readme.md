@@ -14,6 +14,7 @@ As well as the familiar features of Classic Blog Minimalist:
 * 10 theme colors
 * Easily manageable sidebars through Widgets and Widget Sets
 
+See the Charity theme in action at [dwcomedy.com](http://dwcomedy.com/), the web site for the annual Dillon Wilson Comedy for the Cure event.
 
 # Prerequisites
 
@@ -33,4 +34,3 @@ Next, use one of the included themes on a blog. There are three ways to do so:
 * Create a new blog, and choose one of the theme template sets.
 * Go to Design > Templates and choose to Refresh Blog Templates, and choose one of the theme template sets.
 * Go to Design > Theme Dashboard and select "Apply a new Theme," where you can select one of the themes.
-
